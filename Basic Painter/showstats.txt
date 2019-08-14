@@ -1,0 +1,80 @@
+if(PaintArea.brushed) {
+		Graphics g = this.getGraphics();
+		Graphics2D g2d = (Graphics2D)g;
+		g.setColor(Toolbar.getColor());
+		g2d.setStroke(new BasicStroke(2,  BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+
+		g.drawLine(50, 400, 150, 550);
+		
+		}
+		if(PaintArea.StarBrush) {
+			Graphics g = this.getGraphics();
+			Graphics2D g2d = (Graphics2D)g;
+			g.setColor(Toolbar.getColor());
+			g2d.setStroke(new BasicStroke(2,  BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+			g2d.draw(Star.createDefaultStar(30, 100, 480));
+			
+		}
+		if(PaintArea.floorBrush) {
+			Graphics g = this.getGraphics();
+			Graphics2D g2d = (Graphics2D)g;
+			g2d.setColor(Toolbar.color);
+			g2d.setStroke(new BasicStroke(2,  BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+			g2d.drawLine(30, 450, 180, 455);
+			g2d.drawLine(30, 455, 180, 460);
+			g2d.drawLine(30, 460, 180, 465);
+			g2d.drawLine(30, 465, 180, 470);
+			g2d.drawLine(30, 470, 180, 475);
+			g2d.drawLine(30, 475, 180, 480);
+			g2d.drawLine(30, 480, 180, 485);
+			g2d.drawLine(30, 485, 180, 490);
+		}
+		
+		if(PaintArea.wallbrush) {
+			Graphics g = this.getGraphics();
+			Graphics2D g2d = (Graphics2D)g;
+			g2d.setColor(Toolbar.color);
+			g2d.setStroke(new BasicStroke(2,  BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+			g2d.drawLine(50, 400, 52, 550);
+			g2d.drawLine(55, 400, 57, 550);
+			g2d.drawLine(60, 400, 62, 550);
+			g2d.drawLine(65, 400, 67, 550);
+			g2d.drawLine(70, 400, 72, 550);
+			g2d.drawLine(75, 400, 77, 550);
+			g2d.drawLine(80, 400, 82, 550);
+			g2d.drawLine(85, 400, 87, 550);
+			g2d.drawLine(90, 400, 92, 550);
+			g2d.drawLine(95, 400, 97, 550);
+			g2d.drawLine(100, 400, 102, 550);
+			g2d.drawLine(105, 400, 107, 550);
+			
+		}
+		
+		if(PaintArea.TriangleBrush) {
+			Graphics g = this.getGraphics();
+			Graphics2D g2d = (Graphics2D)g;
+			Point p1 = new Point(100, 500);
+			
+			Point p2 = new Point((int)p1.getX() + (int)(p1.getX() - 150), (int)p1.getY());
+	  		Point p3 = new Point((int)p1.getX() +(int)((p1.getX() - (150 /2))),(int) p1.getY() - (int)(p1.getY() - 150));
+	  
+
+	  		int[]xpoints = new int[3];
+	  		xpoints[0]= 50;
+	  		xpoints[1]= 150;
+	  		xpoints[2] = 100;
+	  		
+	  		int[] ypoints = new int[3];
+	  		ypoints[0]= (int)p1.getY();
+	  		ypoints[1]= (int) p2.getY();
+	  		ypoints[2] = 400;
+			g2d.setStroke(new BasicStroke(2,  BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND));
+
+	  		g2d.setColor(Toolbar.color);
+	  		Polygon triangle = new Polygon(xpoints, ypoints, 3);
+	  		
+	  		g2d.drawPolygon(triangle);
+			
+		}
+		
+	}
