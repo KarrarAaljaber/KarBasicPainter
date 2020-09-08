@@ -7,22 +7,27 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 
 
+
 public class Runner {
 	
 	public Runner() {
-		SwingUtilities.invokeLater(new Runnable() {
+  
 
+		SwingUtilities.invokeLater(new Runnable() {
+			
 			public void run() {
 			    
-				
-			try {
-				UIManager.setLookAndFeel(new com.jtattoo.plaf.noire.NoireLookAndFeel());
-			} catch (UnsupportedLookAndFeelException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+				try {
+					UIManager.setLookAndFeel(new  FlatLightLaf());
+				} catch (UnsupportedLookAndFeelException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			
 		
-			MainFrame frame = new MainFrame();
+			new MainFrame();
+			FlatLightLaf.install();
+
 
 			
 			}

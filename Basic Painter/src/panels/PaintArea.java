@@ -97,7 +97,6 @@ public class PaintArea extends JPanel implements MouseMotionListener, MouseListe
     public static TexturePaint textures[] = new TexturePaint[20];
 
     
-	private BufferedImage none;
 	private BufferedImage cobble;
 	private BufferedImage gravel;
 	private BufferedImage camo;
@@ -121,9 +120,6 @@ public class PaintArea extends JPanel implements MouseMotionListener, MouseListe
 
 	public static String Fonttype= "arial";
 
-	private static boolean addOn;
-	
-	
 	private Image background;
 	private Image img;
 	private Graphics2D g2d;
@@ -147,7 +143,6 @@ public class PaintArea extends JPanel implements MouseMotionListener, MouseListe
 	
 	private JPanel infopanel;
 	private JLabel PosInfo;
-	private JLabel WidthnHeight;
 	//public  Dimension CanvasSize = new Dimension((int)MainFrame.getImageSize().getWidth(), (int) MainFrame.getImageSize().getHeight()); 
 
 	public PaintArea() {
@@ -340,10 +335,12 @@ public class PaintArea extends JPanel implements MouseMotionListener, MouseListe
   	    	BufferedImage bi = (BufferedImage) img;
   	    	int y = e.getY();
   	    	int x = e.getX();
-  	    		int p = bi.getRGB(0, 0);
+  	    		//int p = bi.getRGB(0, 0);
   		    	
   	    			for(y = e.getY(); y < e.getY() - getHeight(); y++) {
-  	    				for(x = e.getX(); y < e.getX() - (getWidth() - 200); x++) {
+  	    				for(x = e.getX(); y < e.getX() - (getWidth() - 200); x++) 
+  	    				{
+  	    					
   	    				}
   	    				
   	    				
@@ -477,7 +474,7 @@ public class PaintArea extends JPanel implements MouseMotionListener, MouseListe
 				  		
 				  		int[] ypoints = new int[3];
 				  		ypoints[0]= e.getY();
-				  		ypoints[1]= (int) p2.getY();
+				  		ypoints[1]= (int) p2.getY();  
 				  		ypoints[2] = (int) p3.getY();
 				  		
 				  		g2d.setColor(Toolbar.color);
@@ -508,8 +505,7 @@ public class PaintArea extends JPanel implements MouseMotionListener, MouseListe
 	}
 
 	 public void clear() {
-		 if (background != null) {
-	 	        setImage(copyImage(background));
+		 if (background != null) { 
 	 	    } else {
 			g2d.setPaint(Color.WHITE);
 			g2d.fillRect(0, 0, getWidth() , getHeight());
@@ -740,7 +736,7 @@ public class PaintArea extends JPanel implements MouseMotionListener, MouseListe
 						Color color = new Color(image.getRGB(x, y));
 					    float[] hsb = Color.RGBtoHSB(color.getRed(),color.getGreen(),color.getBlue(),null);
 					    int colorHue = Color.HSBtoRGB((float)hsource/180f, hsb[1], hsb[2]);
-					    Color c = new Color(colorHue);
+					//    Color c = new Color(colorHue);
 					    image.setRGB(x, y, colorHue);
 
 					 
@@ -750,7 +746,7 @@ public class PaintArea extends JPanel implements MouseMotionListener, MouseListe
 							Color color = new Color(image.getRGB(x, y));
 						    float[] hsb = Color.RGBtoHSB(color.getRed(),color.getGreen(),color.getBlue(),null);
 						    int colorHue = Color.HSBtoRGB(hsb[0], (float)ssource/200f, hsb[2]);
-						    Color c = new Color(colorHue);
+						//    Color c = new Color(colorHue);
 						    image.setRGB(x, y, colorHue);
 
 				        }

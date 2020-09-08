@@ -1,14 +1,10 @@
-package panels;
+ package panels;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
+
 import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -20,8 +16,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JSlider;
+
 import javax.swing.border.Border;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -34,6 +29,10 @@ public class MenuBar extends JMenuBar implements ChangeListener  {
 
 	
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	//Menu and menuitems
 	private JMenu file;
 	private JMenuItem OpenFile;
@@ -127,7 +126,7 @@ public class MenuBar extends JMenuBar implements ChangeListener  {
 				
 				if(result == JOptionPane.YES_OPTION) {
 					frame.close();
-					MainFrame frame2 = new MainFrame();
+					new MainFrame();
 
 				}
 			}

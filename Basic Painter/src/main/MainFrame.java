@@ -3,9 +3,7 @@ package main;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
@@ -33,6 +31,12 @@ public class MainFrame   extends JFrame implements WindowListener, ActionListene
 {
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
 	public static final Dimension size = new Dimension(1280, 920);
 	
 	
@@ -46,7 +50,7 @@ public class MainFrame   extends JFrame implements WindowListener, ActionListene
 	
 	
 	//the maintheme color
-	public static Color MainColor = new Color(220, 220, 220);
+	public static Color MainColor = new Color(255, 0, 0);
 	
 	
 	private JScrollPane paintscroll;
@@ -55,10 +59,10 @@ public class MainFrame   extends JFrame implements WindowListener, ActionListene
 	
 
 	public MainFrame() {
-		super("Basic Painter");
+		super("PaintJar");
 	    this.addWindowListener(this);
 		this.setLayout(new BorderLayout());
-	
+		
 	
 	    
 
@@ -82,8 +86,8 @@ public class MainFrame   extends JFrame implements WindowListener, ActionListene
 		menu.OpenFile(paint);
 		menu.SaveFile(paint);
 		menu.Exit(paint);
-		menu.Redo(paint);
-		menu.Undo(paint);
+		MenuBar.Redo(paint);
+		MenuBar.Undo(paint);
 		menu.FlipHor(paint);
 		menu.FlipVer(paint);
 		menu.Filter(paint);
@@ -118,13 +122,13 @@ public class MainFrame   extends JFrame implements WindowListener, ActionListene
 	    paintframe.setSize((int)ImageSize.getWidth(), (int)ImageSize.getHeight());
 	    paintframe.setVisible(true);
 	    paintframe.add(paint);
-	    paintframe.setForeground(new Color(180,180,180));
+	    paintframe.setForeground(new Color(127,0,0));
 	
 	    textureframe.setDoubleBuffered(true);
 	    textureframe.setBounds(1280-200, 252, 200, 280);
 	    textureframe.setVisible(true);
 	    textureframe.add(texturepanel);
-	    textureframe.setForeground(new Color(180,180,180));
+	    textureframe.setForeground(new Color(127,0,0));
 	
 
 		this.setPreferredSize(size);
@@ -239,10 +243,10 @@ public class MainFrame   extends JFrame implements WindowListener, ActionListene
 
 		
 		
-
+		panel.setForeground(new Color(127,0,0));
 		panel.add(wLabel);
 		panel.add(width);
-
+		
 		panel.add(hLabel);
 		panel.add(height);
 		

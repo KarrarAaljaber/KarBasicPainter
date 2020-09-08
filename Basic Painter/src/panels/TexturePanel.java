@@ -4,25 +4,20 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.Graphics;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Vector;
 
-import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import javax.swing.border.Border;
 import javax.swing.filechooser.FileFilter;
 
 import Utils.ExtensionFileFilter;
@@ -31,6 +26,11 @@ import main.MainFrame;
 public class TexturePanel extends JPanel implements MouseListener{
 	
 
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	public static JButton buttonarray[]= new JButton[20];
 	
@@ -470,7 +470,7 @@ public class TexturePanel extends JPanel implements MouseListener{
 			File file = choosefile.getSelectedFile();
 			
 				try {
-					BufferedImage img = ImageIO.read(file);
+					//BufferedImage img = ImageIO.read(file);
 					PaintArea.getPaintFromUser(file, this);
 
 

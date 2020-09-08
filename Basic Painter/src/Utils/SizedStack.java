@@ -4,6 +4,10 @@ import java.util.Stack;
 
 public class SizedStack<T> extends Stack<T> {
 
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 private final int maxSize;
 
 public SizedStack(int size) {
@@ -11,6 +15,7 @@ public SizedStack(int size) {
     this.maxSize = size;
 }
 
+@SuppressWarnings("unchecked")
 @Override
 public Object push(Object object) {
     while (this.size() > maxSize) {

@@ -9,7 +9,12 @@ import java.awt.Point;
 import javax.swing.JButton;
 
 public class JGradientButton extends JButton{
-    public JGradientButton(String text){
+    /**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	public JGradientButton(String text){
         super(text);
         setContentAreaFilled(false);
     }

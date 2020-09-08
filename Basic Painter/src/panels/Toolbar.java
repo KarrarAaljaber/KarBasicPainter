@@ -4,11 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
-import java.awt.GradientPaint;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
+
 import java.awt.GraphicsEnvironment;
-import java.awt.Point;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseEvent;
@@ -24,15 +21,17 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
 import javax.swing.border.Border;
-import javax.swing.border.EtchedBorder;
 
 import Utils.JGradientButton;
 import main.MainFrame;
 
 public class Toolbar extends JPanel implements MouseListener, ItemListener  {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JButton brush;
 	private String brushes[] = {"Basic Brush", "Wall Brush", "Floor Brush", "Star Brush","Triangle Brush" };
 	private JLabel brushLabel;
@@ -41,7 +40,7 @@ public class Toolbar extends JPanel implements MouseListener, ItemListener  {
 	private Icon eraserIcon;
 	private JLabel eraserLabel;
 	
-	private JComboBox brushSize;
+	private JComboBox<Integer> brushSize;
 	private JLabel sizeLabel;
 	
 	//Lower and Top / labels and contents
@@ -61,9 +60,9 @@ public class Toolbar extends JPanel implements MouseListener, ItemListener  {
 	
 	//text
 	private JButton textbutton;
-	private JComboBox FontSize;
+	private JComboBox<Integer> FontSize;
 	private JLabel FontLabel; 
-	private JComboBox FontType;
+	private JComboBox<?> FontType;
 	private String fonts[] = GraphicsEnvironment.getLocalGraphicsEnvironment().getAvailableFontFamilyNames();
 	private JLabel FontTypeLabel;
 	
@@ -99,19 +98,19 @@ public class Toolbar extends JPanel implements MouseListener, ItemListener  {
 		
 		
 		//brushsize from 10 - 100
-		Vector v = new Vector();
+		Vector<Integer> v = new Vector<Integer>();
 		for(int i = 2; i<= 100; i+=2) {
 			v.addElement(i);
 		}
 		
-		Vector vv = new Vector();
+		Vector<Integer> vv = new Vector<Integer>();
 		for(int i = 10; i<= 100; i+=2) {
 			vv.addElement(i);
 		}
-		Vector vvv = new Vector();
+		//Vector<Object> vvv = new Vector<Object>();
 		
 		
-		brushSize = new JComboBox(v);
+		brushSize = new JComboBox<Integer>(v);
 		brushSize.setBackground(MainFrame.MainColor);
 		brushSize.addItemListener(this);
 		brushSize.setBorder(raisedbevel);
@@ -171,7 +170,7 @@ public class Toolbar extends JPanel implements MouseListener, ItemListener  {
 		textbutton.setPreferredSize(new Dimension(90,35));
 		textbutton.setForeground(labelcolor);
 
-		FontSize = new JComboBox(vv);
+		FontSize = new JComboBox<Integer>(vv);
 		FontSize.setForeground(labelcolor);
 		FontSize.addItemListener(this);
 		FontSize.setBorder(raisedbevel);
@@ -181,7 +180,7 @@ public class Toolbar extends JPanel implements MouseListener, ItemListener  {
 		FontLabel.setPreferredSize(new Dimension(80,10));
 		FontLabel.setForeground(labelcolor);
 
-		FontType = new JComboBox(fonts);
+		FontType = new JComboBox<String>(fonts);
 		FontType.setForeground(labelcolor);
 		FontType.setSelectedItem(fonts[5]);
 		FontType.addItemListener(this);
@@ -259,22 +258,22 @@ public class Toolbar extends JPanel implements MouseListener, ItemListener  {
 
 	public void mouseEntered(MouseEvent e) {
 		if(e.getSource() == brush ) {
-			brush.setBackground(Color.GREEN);
+			brush.setBackground(new Color(127, 0,0));
 		}
 		if(e.getSource() == eraser ) {
-			eraser.setBackground(Color.GREEN);
+			eraser.setBackground(new Color(127, 0,0));
 		}
 		if(e.getSource() == getColorbtn() ) {
-			getColorbtn().setBackground(Color.GREEN);
+			getColorbtn().setBackground(new Color(127, 0,0));
 		}
 		if(e.getSource() == clearPage ) {
-			clearPage.setBackground(Color.GREEN);
+			clearPage.setBackground(new Color(127, 0,0));
 		}
 		if(e.getSource() == textbutton ) {
-			textbutton.setBackground(Color.GREEN);
+			textbutton.setBackground(new Color(127, 0,0));
 		}
 		if(e.getSource() == colorpicker ) {
-			colorpicker.setBackground(Color.GREEN);
+			colorpicker.setBackground(new Color(127, 0,0));
 		}
 		
 	}
@@ -537,7 +536,7 @@ public class Toolbar extends JPanel implements MouseListener, ItemListener  {
 
 
 	public void setColorbtn(JGradientButton colorbtn) {
-		this.colorbtn = colorbtn;
+		Toolbar.colorbtn = colorbtn;
 	}
 
 

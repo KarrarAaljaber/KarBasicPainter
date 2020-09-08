@@ -26,17 +26,23 @@ import main.MainFrame;
 
 public class ShapesPanel extends JPanel implements MouseListener, ItemListener, MouseMotionListener {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private JPanel TopShapesPanel;
 	private JPanel LowShapesPanel;
+	
+	/*
 	private JPanel ShapesPanel;
 	private JPanel ShowStatsPanel;
-	
+	*/
 	
 	private JButton rectangle;
 	private JButton circle;
 	private JButton Triangle;
 	private JButton Star;
-	private JButton eclipse;
+	
 	
 	private JCheckBox fill;
 	private JLabel fillLabel;
@@ -44,7 +50,6 @@ public class ShapesPanel extends JPanel implements MouseListener, ItemListener, 
 	
 	Border raisedbevel;
 	
-	private JLabel showstatslabel;
 	public ShapesPanel() {
 		raisedbevel = BorderFactory.createRaisedBevelBorder();
 		this.setLayout(new BorderLayout());
@@ -250,7 +255,6 @@ public class ShapesPanel extends JPanel implements MouseListener, ItemListener, 
 	}
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 	@Override
@@ -265,7 +269,6 @@ public class ShapesPanel extends JPanel implements MouseListener, ItemListener, 
 
 	@Override
 	public void mouseDragged(MouseEvent arg0) {
-		// TODO Auto-generated method stub
 		
 	}
 
